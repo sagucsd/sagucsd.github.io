@@ -1,0 +1,356 @@
+<!DOCTYPE html> 
+<html lang="en-US">
+<html>
+<head> 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4SBXGLGZKE"></script>
+	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+
+	  gtag('config', 'G-4SBXGLGZKE');
+	</script> 
+<title>Measuring Mental Workload ❘ Sarai Gonzalez</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=false;">
+<meta name="googlebot" content="noindex"> 
+<meta name="robots" content="noindex"> 
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-io/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-io/favicon-16x16.png">
+<link rel="manifest" href="/favicon-io/site.webmanifest"> 
+<!-- Latest CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- jQuery file, include before bootstrap.min.js -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Latest JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Scripts -->
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css" />
+    <link rel = "stylesheet" type = "text/css" href = "assets/css/fonts.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="assets/css/zoom.css" rel="stylesheet">
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/zoom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://use.fontawesome.com/a891bb0a11.js"></script>
+    <script src="assets/js/script.js" charset="utf-8"></script>
+</head>
+  <body>
+    <div class="spinner-wrapper">
+      <div class="p-center-wrapper">
+        <div class="la-line-scale la-dark">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div> 
+	    <div></div>
+            <h4 id="preloader-title"></h4>
+            <h5 id="preloader-content"></h5>
+        </div>
+      </div>
+    </div>
+
+   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-nav">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Sarai Gonzalez</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right" id="collapsible-nav">
+        <ul class="nav navbar-nav">
+          <li><a class="selected hvr-underline-from-left" href="index.html#my-work">Projects</a></li>
+          <li><a class="hvr-underline-from-left" href="https://drive.google.com/file/d/1zfu_kYayNMbLoBsyld5feaFiOlhlU-mM/view?usp=sharing" target="_blank">CV</a></li>
+          <li><a class="hvr-underline-from-left" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </nav> 
+    <div class="container-fluid">
+      <div class="row" style="margin-top: 50px">
+        <nav class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+          <div class="bs-docs-sidebar">
+            <ul class="nav nav-stacked"id="sidebar">
+              <li>
+                <a href="#overview">Overview</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#intro">Introduction</a></li>
+                  <li><a href="#dataset">The Dataset</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="#hypotheses">Hypotheses</a>
+              </li>
+
+	      <li>
+                <a href="#analysis">Analysis & Results</a>
+              </li> 
+		<li> 
+                <a href="#ethics">Ethics & Privacy</a>
+              </li> 
+              <li> 
+                <a href="#what-i-learned">Lessons Learned</a>
+              </li> 
+		<li> 
+                <a href="#references">References</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 col-centered main-content first-section">
+          <section id="overview" class="group" data-aos-duration="600"> 
+            <h3>Overview</h3> 
+	    <hr>
+            <div class="subgroup">
+		<p>Can your smartwatch tell when you're burned out? Can physiological data predict when a person's cognitive system is being pushed past its limits? I tackled these questions during 2025 UC Love Data Week, an event focused on discovering, managing, and sharing data. <span class="highlight highlight-data">Using R, I examined potential correlations between physiological metrics and mental workload among 20 subjects. I found a significant relationship between heart rate and NASA-TLX scores.</span> Thanks to affordable wearable tech making massive amounts of real-time biological data available to everyone, my work can be used to monitor personal work performance in the digital age.</p>
+	    </div>
+            <div id="intro" class="subgroup">
+              <h4>Introduction</h4>
+              <p>Mental workload (MWL) characterises an individual’s level of cognitive engagement and effort while performing tasks. As task demand increases, human performance declines. Mental workload plays a crucial role across different industries, especially in high-stakes and safety-critical spaces. <span class="highlight highlight-data">Research shows higher MWL causes mental fatigue, stress, and increased errors and frustration. MWL assessment contributes to the design of better work environments, tasks that align with human cognitive capabilities, and prevention of human-caused errors and accidents.</span></p>
+<p>Repeated measures correlation (rmcorr) has several advantages over other techniques: it can handle repeated measures data without averaging it. It's helpful for studying how a variable changes within a person over time.  By calculating the rmcorr coefficient (rrm), we can examine how an individual’s physiology shifts with their mental effort, providing a high-resolution map of human performance under pressure.</p>
+            </div>
+
+            <div class="row">
+              <div  class="subgroup-left-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                  <h4 id="dataset">The Dataset</h4>
+                  <p>The dataset is from an experiment (Izzah et al., 2022) exploring machine learning models to identify whether subjects performed cognitive tasks or not. Heart Rate Variability (HRV) is the variation in the time between two heartbeats. Gao et al., (2013) observed an increase in HRV during a high complexity task. 30 subjects completed two cognitive tests—the d2 Attention Test and Switcher Featuring Task—during which their HRV was monitored as a physiological indicator of mental workload. This analysis uses unpublished NASA Task Load Index (TLX) scores, a self-reported measure of perceived mental workload. Higher scores reflect higher engagement of mental workload in each task.</p>
+              </div>
+              <div class="subgroup-right-side col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
+		<h4>Role</h4> 
+		<p>Data Scientist</p> 
+                <h4>Tools</h4>
+                <p>Kaggle, R, Rstudio</p> 
+		<h4>Dataset</h4>
+                <p><a href="https://www.kaggle.com/datasets/audityasutarto/heart-rate-variability-and-cognitive-mental-load/data">Link to Dataset</a></p>
+                <br>
+                <br>
+              </div> 
+            </div> 
+
+         <div class="section-divider">
+            <div class="dot1">
+            </div>
+            <div class="dot2">
+            </div>
+            <div class="dot3">
+            </div>
+          </div>
+
+          <section id="hypotheses" class="group" data-aos="fade-up" data-aos-duration="600">
+              <h3>Hypotheses</h3>
+              <hr>
+	      <div class="subgroup">
+                  <p><span class="highlight highlight-data">Does heart rate significantly correlate with TLX scores across the two cognitive workload tests? Does the low-frequency to high-frequency ratio significantly correlate with TLX scores across these tests?</span> These questions are posed in the form of two null hypotheses:<br><br></p> 
+			<ol>
+				<li>H01= There is no significant correlation between heart rate and NASA-TLX scores across the two cognitive workload tests</li> 
+				<li>H02= There is no significant correlation between the ratio LF to HF and NASA-TLX scores across the two cognitive workload tests</li>
+			</ol>  
+	      </div> 
+            </section>
+            <div class="section-divider">
+              <div class="dot1">
+              </div>
+              <div class="dot2">
+              </div>
+              <div class="dot3">
+              </div>
+            </div> 
+           </div>
+          <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 col-centered main-content">
+
+   	      <section id="analysis" class="group" data-aos="fade-up" data-aos-duration="600">
+              <h3>Analysis & Results</h3>
+              <hr> 
+            <div class="subgroup"> 
+		<h5 class="data-sci-h5">Finding 1: Heart Rate Correlates with Cognitive Load</h5>
+	      <p><span class="highlight highlight-data">A positive intra-individual correlation indicated a significant relationship between heart rate and NASA-TLX scores (rrm (19) = 0.48, 95% CI [0.06, 0.755], p = 0.028) across two different mental workload tests, leading to the rejection of the first null hypothesis. This suggests that higher mental workload was associated with increased heart rate.</span></p> 
+	      <img class="img-responsive full-screen-img" src="images/Final-Plot-HR.webp" alt="graph"><br><br> 
+		<p class="img-caption">Each participant’s data is color-coded with lines representing the rmcorr fit for each individual.</p>
+	<h5 class="data-sci-h5">Finding 2: LF/HF Ratio is an Unreliable Metric</h5> 
+	      <p>In contrast, this evidence was insufficient to reject H02 for a significant correlation between the LF to HF ratio and NASA-TLX scores (rrm (19) = 0.34, 95% CI [-0.106, 0.674], p = 0.13). <span class="highlight highlight-data">For real-time workload monitoring, heart rate may be a more dependable metric than noisy ratios like LF/HF, which showed higher variability among our 20 subjects.</span></p> 
+              <img class="img-responsive full-screen-img" src="images/Final-Plot-LFHF.webp" alt="graph"><br><br> 
+		<p>Heart rate emerged as the stronger physiological signal. Ultimately, this underscores the potential of integrating wearable tech into modern workload assessment frameworks.</p> 
+<p class="p-center-wrapper"><button data-toggle="collapse" data-target="#interview-details" class="btn black-button" name="button">View Code</button></p>
+                  <div class="collapse" id="interview-details"> 
+	      <p><pre><code>#Used to compute repeated measures correlation
+install.packages("rmcorr") 
+
+#Used for data manipulation
+install.packages("dplyr")
+ 
+#Used for visualizations
+install.packages("ggplot2") 
+install.packages("cowplot")
+install.packages("pals")
+  
+#Activate packages
+library(rmcorr)
+library(dplyr)
+library(ggplot2) 
+library(cowplot)
+library(pals)
+
+#Load CSV file with semicolon as separator 
+data_csv <- read.csv("hrv_mwl.csv", sep = ";") 
+#Compute rmcorr between Heart Rate and NASA-TLX 
+hr_nasa<-rmcorr(participant=participant, measure1=hr, measure2=nasa, dataset=data_csv)
+hr_nasa 
+
+#Retain first 20 subjects for visualization clarity
+data_clean <- data_csv %>% 
+  filter(Subject <= 20)
+
+#Visualizing plot between HR and NASA-TLX 
+ggplot(data_clean, aes(x = hr, y = nasa,   group = factor(participant), color = factor(participant))) +
+  geom_point(aes(colour = factor(participant))) +
+  geom_line(aes(y = hr_nasa$model$fitted.values), linetype = 2) +
+  ylab("NASA-TLX") +
+  xlab("Heart Rate") +
+  theme_cowplot() +
+  scale_shape_identity() +
+  theme(legend.position = "none",
+             plot.title = element_text(size = 20, hjust = 0.5),
+             axis.title = element_text(size = 15),
+             axis.text = element_text(size = 15),
+             axis.text.x = element_text(angle = 0, hjust = 0, vjust = 0)) +
+  scale_colour_manual(values = cols25(n)) +
+  annotate("text",
+          x = -Inf,
+          y = -Inf,
+          size = 5,
+          label = deparse(bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
+            ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001",
+                          ifelse(my.rmc$p < 0.01, "< 0.01",
+                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.045, "< 0.05",
+                              paste0("= ",round(my.rmc$p, digits = 2))))))))),
+          hjust = -0.5,
+          vjust = -0.5,
+          parse = TRUE) 
+
+#Compute rmcorr between ratio LF to HF and NASA-TLX  
+lfhf_nasa<-rmcorr(participant=participant, measure1=lfhf, measure2=nasa, dataset=data_csv)
+lfhf_nasa 
+
+#Visualizing plot between ratio LF to HF and NASA-TLX  
+ggplot(data_clean, aes(x = lfhf, y = nasa,   group = factor(participant), color = factor(participant))) +
+  geom_point(aes(colour = factor(participant))) +
+  geom_line(aes(y = lfhf_nasa$model$fitted.values), linetype = 2) +
+  ylab("NASA-TLX") +
+  xlab("Ratio LF to HF") +
+  theme_cowplot() +
+  scale_shape_identity() +
+  theme(legend.position = "none",
+             plot.title = element_text(size = 20, hjust = 0.5),
+             axis.title = element_text(size = 15),
+             axis.text = element_text(size = 15),
+             axis.text.x = element_text(angle = 0, hjust = 0, vjust = 0)) +
+  scale_colour_manual(values = cols25(n)) +
+  annotate("text",
+          x = Inf,
+          y = -Inf,
+          size = 5,
+          label = deparse(bquote(atop(~~italic(r[rm])~"="~ .(sprintf("%.2f", round(my.rmc$r, 2))),
+            ~italic(p)~.(ifelse(my.rmc$p < 0.001, "< 0.001",
+                          ifelse(my.rmc$p < 0.01, "< 0.01",
+                            ifelse(my.rmc$p < 0.05 & my.rmc$p > 0.045, "< 0.05",
+                              paste0("= ",round(my.rmc$p, digits = 2))))))))),
+          hjust = 1.5,
+          vjust = -0.5,
+          parse = TRUE)
+
+</code></pre> 
+</p></div>
+
+            </div>
+	   </section>
+
+            <div class="section-divider">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+            </div> 
+ 	    <section id="ethics" class="group">
+              <h3>Ethics & Privacy</h3>
+              <hr> 
+            <div class="subgroup">
+	      <p>The dataset I used is from Kaggle, a crowdsourced platform where data scientists share data for public use. In the original dataset, each participant was assigned a unique code or number to ensure anonymity. No new data was collected for this analysis.</p> 
+            </div>
+	   </section> 
+
+	   <div class="section-divider">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+           </div>  
+
+            <section id="what-i-learned" class="group">
+              <h3>Lessons Learned</h3>
+              <hr> 
+            <div class="subgroup"> 
+		<img class="img-responsive full-screen-img" src="images/data-sci-quote-new.png" alt="quote"><br>
+	      <p><span class="highlight highlight-data">Data is a storytelling tool that helps explain important insights to both technical and wider audiences.</span> Data scientists often forget the final stage of the scientific process: communicating results. An analysis is only as good as its explanation. Audiences may not share your background knowledge. To help others build a good mental model of the data, you need to invest time in making your plots as clear as possible. R packages like ggplot2 come in handy for this. For those that want to learn more about data science, I highly recommend UC Love Data Week. I learned so much and look forward to next year's event!</p>
+            </div>
+	   </section> 
+	   <div class="section-divider">
+            <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+           </div> 
+  	  <section id="references" class="group">
+              <h3>References</h3>
+              <hr> 
+            <div class="subgroup">
+	      <p>Gao, Q., Wang, Y., Song, F., Li, Z., & Dong, X. (2013). Mental workload measurement for emergency operating procedures in digital nuclear power plants. Ergonomics, 56(7), 1070–1085. <a href="https://doi.org/10.1080/00140139.2013.790483">https://doi.org/10.1080/00140139.2013.790483</a></p> 
+		<p>Izzah, N., Sutarto, A. P., & Hariyadi, M. (2022). Machine learning models for the Cognitive Stress Detection Using Heart Rate Variability Signals. Jurnal Teknik Industri, vol. 24, no. 2, pp. 83–94. <a href="https://doi.org/10.9744/jti.24.2.83-94">https://doi.org/10.9744/jti.24.2.83-94</a></p>
+            </div>
+	   </section> 
+        </div>
+      </div>
+    </div>
+
+    <a href="" id="template-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+    <div class="container-fluid">
+      <div class="row footer-row">
+        <div class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <p>
+            <a class="hvr-underline-from-left" href="index.html#my-work" >All</a> / 
+	    <a class="hvr-underline-from-left" href="food-waste.html">Food Crusaders</a> /
+            <a class="hvr-underline-from-left" href="audreys-cafe.html">Audrey's Café</a> / 
+	    <a class="hvr-underline-from-left" href="career-fair.html">Career Fair</a> /
+            <a class="hvr-underline-from-left" href="mobile-cards.html">Mobile Cards Redesign</a> / 
+	    <a class="selected-footer" href="data-sci.html">Measuring Mental Workload</a>  
+          </p>
+          <br>
+          <br>
+          <p class="footer-text">Designed with ♥</p>
+        </div>
+        <div class="footer-icons col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <p>
+            <a href="mailto:sag009@ucsd.edu" target="_blank"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a> 
+	    <a href="https://github.com/sagucsd" target="_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+          </p>
+          <br>
+          <p class="footer-text-small">&#169; 2025 Sarai Gonzalez</p>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+
+</html>
