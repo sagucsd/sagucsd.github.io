@@ -113,18 +113,18 @@
             <h3>Overview</h3> 
 	    <hr>
             <div class="subgroup">
-		<p>Can your smartwatch tell when you're burned out? Can physiological data predict when a person's cognitive system is being pushed past its limits? I tackled these questions during 2025 UC Love Data Week, an event focused on discovering, managing, and sharing data. <span class="highlight highlight-data">Using R, I examined potential correlations between physiological metrics and mental workload among 20 subjects. I found a significant relationship between heart rate and NASA-TLX scores.</span> Thanks to affordable wearable tech making massive amounts of real-time biological data available to everyone, my work can be used to monitor personal work performance in the digital age.</p>
+		<p>Can your smartwatch tell when you're burned out? I tackled this question during 2025 UC Love Data Week, an event focused on discovering, managing, and sharing data. <span class="highlight highlight-data">Using R, I examined potential correlations between physiological metrics and mental workload among 20 subjects. I found a significant relationship between heart rate and NASA-TLX scores.</span> Thanks to affordable wearable tech making massive amounts of real-time biological data available to everyone, my work can be used to improve workplace health and safety in the digital age.</p>
 	    </div>
             <div id="intro" class="subgroup">
               <h4>Introduction</h4>
-              <p>Mental workload (MWL) characterises an individual’s level of cognitive engagement and effort while performing tasks. As task demand increases, human performance declines. Mental workload plays a crucial role across different industries, especially in high-stakes and safety-critical spaces. <span class="highlight highlight-data">Research shows higher MWL causes mental fatigue, stress, and increased errors and frustration. MWL assessment contributes to the design of better work environments, tasks that align with human cognitive capabilities, and prevention of human-caused errors and accidents.</span></p>
-<p>Repeated measures correlation (rmcorr) has several advantages over other techniques: it can handle repeated measures data without averaging it. It's helpful for studying how a variable changes within a person over time.  By calculating the rmcorr coefficient (rrm), we can examine how an individual’s physiology shifts with their mental effort, providing a high-resolution map of human performance under pressure.</p>
+              <p>Mental workload (MWL) characterises an individual’s level of cognitive engagement and effort while performing tasks. As task demand increases, human performance declines. <span class="highlight highlight-data">Research shows higher MWL causes increased fatigue, injury, errors and accidents.</span> Mental workload plays a crucial role across different industries, especially in labor-intensive and safety-critical spaces.</p>
+<p>Repeated measures correlation (rmcorr) has several advantages over other techniques: it can handle repeated measures data without averaging it. It's helpful for studying how a variable changes within a person over time.  <span class="highlight highlight-data">By calculating the rmcorr coefficient (rrm), we can examine how an individual’s physiology shifts with their mental effort, providing a high-resolution map of human performance under pressure.</span></p>
             </div>
 
             <div class="row">
               <div  class="subgroup-left-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
                   <h4 id="dataset">The Dataset</h4>
-                  <p>The dataset is from an experiment (Izzah et al., 2022) exploring machine learning models to identify whether subjects performed cognitive tasks or not. Heart Rate Variability (HRV) is the variation in the time between two heartbeats. Gao et al., (2013) observed an increase in HRV during a high complexity task. 30 subjects completed two cognitive tests—the d2 Attention Test and Switcher Featuring Task—during which their HRV was monitored as a physiological indicator of mental workload. This analysis uses unpublished NASA Task Load Index (TLX) scores, a self-reported measure of perceived mental workload. Higher scores reflect higher engagement of mental workload in each task.</p>
+                  <p>The dataset is from an experiment (Izzah et al., 2022) exploring machine learning models to identify whether subjects performed cognitive tasks or not. Heart Rate Variability (HRV) is the variation in the time between two heartbeats. 30 subjects completed two cognitive tests (d2 Attention Test and Switcher Featuring Task) during which their HRV was monitored as a physiological indicator of mental workload. <span class="highlight highlight-data">This analysis uses unpublished NASA Task Load Index (TLX) scores, a self-reported measure of perceived mental workload.</span> Higher scores reflect higher engagement of mental workload in each task.</p>
               </div>
               <div class="subgroup-right-side col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
 		<h4>Role</h4> 
@@ -151,7 +151,7 @@
               <h3>Hypotheses</h3>
               <hr>
 	      <div class="subgroup">
-                  <p><span class="highlight highlight-data">Does heart rate significantly correlate with TLX scores across the two cognitive workload tests? Does the low-frequency to high-frequency ratio significantly correlate with TLX scores across these tests?</span> These questions are posed in the form of two null hypotheses:<br><br></p> 
+                  <p>Does heart rate significantly correlate with TLX scores across the two cognitive workload tests? Does the low-frequency to high-frequency ratio significantly correlate with TLX scores across these tests? These questions are posed in the form of two null hypotheses:<br><br></p> 
 			<ol>
 				<li>H01= There is no significant correlation between heart rate and NASA-TLX scores across the two cognitive workload tests</li> 
 				<li>H02= There is no significant correlation between the ratio LF to HF and NASA-TLX scores across the two cognitive workload tests</li>
@@ -173,7 +173,7 @@
               <h3>Analysis & Results</h3>
               <hr> 
             <div class="subgroup"> 
-		<h5 class="data-sci-h5">Finding 1: Heart Rate Correlates with Cognitive Load</h5>
+		<h5 class="data-sci-h5">Finding 1: Heart Rate Correlates with Mental Workload</h5>
 	      <p><span class="highlight highlight-data">A positive intra-individual correlation indicated a significant relationship between heart rate and NASA-TLX scores (rrm (19) = 0.48, 95% CI [0.06, 0.755], p = 0.028) across two different mental workload tests, leading to the rejection of the first null hypothesis. This suggests that higher mental workload was associated with increased heart rate.</span></p> 
 	      <img class="img-responsive full-screen-img" src="images/Final-Plot-HR.webp" alt="graph"><br><br> 
 		<p class="img-caption">Each participant’s data is color-coded with lines representing the rmcorr fit for each individual.</p>
@@ -183,35 +183,35 @@
 		<p>Heart rate emerged as the stronger physiological signal. Ultimately, this underscores the potential of integrating wearable tech into modern workload assessment frameworks.</p> 
 <p class="p-center-wrapper"><button data-toggle="collapse" data-target="#interview-details" class="btn black-button" name="button">View Code</button></p>
                   <div class="collapse" id="interview-details"> 
-	      <p><pre><code>#Used to compute repeated measures correlation
+	      <p><pre><code># Used to compute repeated measures correlation
 install.packages("rmcorr") 
 
-#Used for data manipulation
+# Used for data manipulation
 install.packages("dplyr")
  
-#Used for visualizations
+# Used for visualizations
 install.packages("ggplot2") 
 install.packages("cowplot")
 install.packages("pals")
   
-#Activate packages
+# Activate packages
 library(rmcorr)
 library(dplyr)
 library(ggplot2) 
 library(cowplot)
 library(pals)
 
-#Load CSV file with semicolon as separator 
+# Load CSV file with semicolon as separator 
 data_csv <- read.csv("hrv_mwl.csv", sep = ";") 
 #Compute rmcorr between Heart Rate and NASA-TLX 
 hr_nasa<-rmcorr(participant=participant, measure1=hr, measure2=nasa, dataset=data_csv)
 hr_nasa 
 
-#Retain first 20 subjects for visualization clarity
+# Retain first 20 subjects for visualization clarity
 data_clean <- data_csv %>% 
   filter(Subject <= 20)
 
-#Visualizing plot between HR and NASA-TLX 
+# Visualizing plot between HR and NASA-TLX 
 ggplot(data_clean, aes(x = hr, y = nasa,   group = factor(participant), color = factor(participant))) +
   geom_point(aes(colour = factor(participant))) +
   geom_line(aes(y = hr_nasa$model$fitted.values), linetype = 2) +
@@ -238,11 +238,11 @@ ggplot(data_clean, aes(x = hr, y = nasa,   group = factor(participant), color = 
           vjust = -0.5,
           parse = TRUE) 
 
-#Compute rmcorr between ratio LF to HF and NASA-TLX  
+# Compute rmcorr between ratio LF to HF and NASA-TLX  
 lfhf_nasa<-rmcorr(participant=participant, measure1=lfhf, measure2=nasa, dataset=data_csv)
 lfhf_nasa 
 
-#Visualizing plot between ratio LF to HF and NASA-TLX  
+# Visualizing plot between ratio LF to HF and NASA-TLX  
 ggplot(data_clean, aes(x = lfhf, y = nasa,   group = factor(participant), color = factor(participant))) +
   geom_point(aes(colour = factor(participant))) +
   geom_line(aes(y = lfhf_nasa$model$fitted.values), linetype = 2) +
