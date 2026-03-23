@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UCSD Mobile Card Accounts — Style Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:     #182B49;
+    --blue:     #00629B;
+    --yellow:   #FFCD00;
+    --white:    #FFFFFF;
+    --sand:     #F5F0E6;
+    --cyan:     #00C6D7;
+    --magenta:  #D462AD;
+    --black:    #000000;
+    --coolgray: #747678;
+    --stone:    #B6B1A9;
+    --green:    #6E963B;
+    --red:      #C0392B;
+    --bg:       #F0EEE9;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--navy);
+    padding: 48px 52px 72px;
+    min-height: 100vh;
+  }
+
+  /* ── PAGE TITLE ── */
+  .page-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 40px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .guide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 56px 48px;
+    align-items: start;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--coolgray);
+    margin-bottom: 18px;
+  }
+
+  /* ════════════════════════════
+     TYPOGRAPHY
+  ════════════════════════════ */
+  .typography-section {
+    grid-column: 1 / 2;
+  }
+
+  .type-row {
+    display: grid;
+    grid-template-columns: 220px 110px 90px 100px 100px;
+    align-items: start;
+    margin-bottom: 28px;
+    gap: 0;
+  }
+
+  .type-meta-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--stone);
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  .type-meta-value {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 400;
+  }
+
+  .type-name-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--stone);
+    margin-bottom: 4px;
+  }
+
+  .t-h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 72px;
+    color: var(--navy);
+  }
+
+  .t-h2 {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 56px;
+    color: var(--navy);
+  }
+
+  .t-h3 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--navy);
+  }
+
+  .t-body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--navy);
+  }
+
+  .t-caption {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: var(--navy);
+  }
+
+  /* ════════════════════════════
+     COLOR PALETTES
+  ════════════════════════════ */
+  .color-section {
+    grid-column: 2 / 3;
+  }
+
+  .color-group-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    color: var(--coolgray);
+    margin-bottom: 10px;
+    margin-top: 16px;
+  }
+
+  .color-group-label:first-of-type { margin-top: 0; }
+
+  .color-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .swatch-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .swatch {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .swatch.outlined { border: 1.5px solid #C8C0B0; }
+
+  .swatch-name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--coolgray);
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+
+  /* ════════════════════════════
+     BUTTONS + LOGOS
+  ════════════════════════════ */
+  .buttons-logos-section {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  /* Buttons */
+  .btn-group {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .btn-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .btn-state-label {
+    font-size: 12px;
+    color: var(--stone);
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--navy);
+    border: none;
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-family: 'Teko', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn-hover {
+    background: var(--white);
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-family: 'Teko', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn-navy {
+    background: var(--navy);
+    color: var(--yellow);
+    border: none;
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-family: 'Teko', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--blue);
+    border: 1.5px solid var(--blue);
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* ════════════════════════════
+     ICONS
+  ════════════════════════════ */
+  .icons-section {
+    grid-column: 1 / 2;
+  }
+
+  .icons-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .icon-box {
+    width: 44px; height: 44px;
+    background: var(--white);
+    border-radius: 11px;
+    border: 1px solid #D8DCEA;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 1px 4px rgba(24,43,73,0.06);
+  }
+
+  .icon-label {
+    font-size: 9px;
+    color: var(--coolgray);
+    font-family: 'Source Sans 3', sans-serif;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* ════════════════════════════
+     COMPONENTS
+  ════════════════════════════ */
+  .components-section {
+    grid-column: 2 / 4;
+  }
+
+  .components-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* Balance chip */
+  .comp-balance-chip {
+    background: linear-gradient(145deg, var(--navy), var(--blue));
+    border-radius: 14px;
+    padding: 14px 18px;
+    color: white;
+    min-width: 130px;
+  }
+
+  .comp-bc-label { font-size: 10px; opacity: 0.65; margin-bottom: 3px; }
+  .comp-bc-amount { font-family: 'Teko', sans-serif; font-size: 28px; font-weight: 600; line-height: 1; color: var(--white); }
+  .comp-bc-name { font-size: 10px; opacity: 0.55; margin-top: 3px; }
+
+  /* ID card chip */
+  .comp-id-card {
+    background: linear-gradient(135deg, var(--navy) 55%, var(--blue));
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 200px;
+  }
+
+  .comp-id-card::after {
+    content: none;
+  }
+
+  .comp-id-avatar {
+    width: 38px; height: 38px;
+    background: rgba(255,205,0,0.2);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .comp-id-info .comp-id-name { font-size: 13px; font-weight: 700; color: var(--white); }
+  .comp-id-info .comp-id-num { font-family: monospace; font-size: 10px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
+  .comp-id-badge {
+    margin-left: auto;
+    font-family: 'Teko', sans-serif;
+    font-size: 11px; letter-spacing: 0.08em;
+    background: var(--yellow); color: var(--navy);
+    padding: 2px 9px; border-radius: 20px;
+    font-weight: 600;
+  }
+
+  /* Transaction row */
+  .comp-txn {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 11px 13px;
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid #E4E1DA;
+    min-width: 220px;
+  }
+
+  .comp-txn-icon { width: 34px; height: 34px; border-radius: 9px; background: #FFF8E1; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+  .comp-txn-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .comp-txn-sub { font-size: 10px; color: var(--stone); margin-top: 1px; }
+  .comp-txn-amount { font-size: 13px; font-weight: 700; color: #C0392B; font-family: monospace; margin-left: auto; }
+  .comp-txn-amount.cr { color: #27AE60; }
+
+  /* Tab bar component */
+  .comp-tab-bar {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid #E4E1DA;
+    padding: 10px 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .comp-tab {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+  }
+
+  .comp-tab-label {
+    font-family: 'Teko', sans-serif;
+    font-size: 10px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--stone);
+  }
+
+  .comp-tab.active .comp-tab-label { color: var(--blue); }
+
+  .comp-tab-dot {
+    width: 4px; height: 4px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+
+  /* Input field */
+  .comp-input {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1.5px solid #D0D4E4;
+    padding: 11px 14px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    min-width: 180px;
+    outline: none;
+  }
+
+  .comp-input-focused {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1.5px solid var(--blue);
+    padding: 11px 14px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    min-width: 180px;
+    box-shadow: 0 0 0 3px rgba(0,98,155,0.12);
+  }
+
+  /* Divider */
+  .guide-divider {
+    grid-column: 1 / 4;
+    height: 1px;
+    background: #D8D3CA;
+    margin: 4px 0;
+  }
+
+  /* spacing utility */
+  .mt4 { margin-top: 4px; }
+  .mt8 { margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="page-title">Style Guide &nbsp;·&nbsp; UC San Diego Mobile Card Accounts</div>
+
+<div class="guide-grid">
+
+  <!-- ══ TYPOGRAPHY ══ -->
+  <div class="typography-section">
+    <div class="section-label">Typography</div>
+
+    <!-- Header row labels -->
+    <div class="type-row" style="margin-bottom:10px">
+      <div class="type-meta-label">Name</div>
+      <div class="type-meta-label">Font Name</div>
+      <div class="type-meta-label">Font Size</div>
+      <div class="type-meta-label">Weight</div>
+      <div class="type-meta-label">Line Height</div>
+    </div>
+
+    <!-- H1 -->
+    <div class="type-row">
+      <div>
+        <div class="type-name-label">Name</div>
+        <div class="t-h1">Heading 1</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Name</div>
+        <div class="type-meta-value">Teko</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Size</div>
+        <div class="type-meta-value">56 px</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Weight</div>
+        <div class="type-meta-value">SemiBold</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Line Height</div>
+        <div class="type-meta-value">72 px</div>
+      </div>
+    </div>
+
+    <!-- H2 -->
+    <div class="type-row">
+      <div>
+        <div class="type-name-label">Name</div>
+        <div class="t-h2">Heading 2</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Name</div>
+        <div class="type-meta-value">Teko</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Size</div>
+        <div class="type-meta-value">40 px</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Weight</div>
+        <div class="type-meta-value">SemiBold</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Line Height</div>
+        <div class="type-meta-value">56 px</div>
+      </div>
+    </div>
+
+    <!-- H3 -->
+    <div class="type-row">
+      <div>
+        <div class="type-name-label">Name</div>
+        <div class="t-h3">Heading 3</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Name</div>
+        <div class="type-meta-value">Source Sans Pro</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Size</div>
+        <div class="type-meta-value">24 px</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Weight</div>
+        <div class="type-meta-value">SemiBold</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Line Height</div>
+        <div class="type-meta-value">32 px</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="type-row">
+      <div>
+        <div class="type-name-label">Name</div>
+        <div class="t-body">Body Text</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Name</div>
+        <div class="type-meta-value">Source Sans Pro</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Size</div>
+        <div class="type-meta-value">16 px</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Weight</div>
+        <div class="type-meta-value">Regular</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Line Height</div>
+        <div class="type-meta-value">24 px</div>
+      </div>
+    </div>
+
+    <!-- Caption -->
+    <div class="type-row">
+      <div>
+        <div class="type-name-label">Name</div>
+        <div class="t-caption">Caption Text</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Name</div>
+        <div class="type-meta-value">Source Sans Pro</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Font Size</div>
+        <div class="type-meta-value">16 px</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Weight</div>
+        <div class="type-meta-value">Light</div>
+      </div>
+      <div>
+        <div class="type-meta-label">Line Height</div>
+        <div class="type-meta-value">24 px</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COLOR PALETTES ══ -->
+  <div class="color-section">
+    <div class="section-label">Color Palettes</div>
+
+    <div class="color-group-label">Primary Colors</div>
+    <div class="color-row">
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#FFCD00"></div>
+        <div class="swatch-name">Yellow</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#00629B"></div>
+        <div class="swatch-name">Blue</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#182B49"></div>
+        <div class="swatch-name">Navy</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch outlined" style="background:#F5F0E6"></div>
+        <div class="swatch-name">Sand</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch outlined" style="background:#FFFFFF"></div>
+        <div class="swatch-name">White</div>
+      </div>
+    </div>
+
+    <div class="color-group-label">Neutral Colors</div>
+    <div class="color-row">
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#000000"></div>
+        <div class="swatch-name">Black</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#747678"></div>
+        <div class="swatch-name">Cool Gray</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#B6B1A9"></div>
+        <div class="swatch-name">Stone</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch outlined" style="background:#FFFFFF"></div>
+        <div class="swatch-name">White</div>
+      </div>
+    </div>
+
+    <div class="color-group-label">State Colors</div>
+    <div class="color-row">
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#6E963B"></div>
+        <div class="swatch-name">Success</div>
+      </div>
+      <div class="swatch-wrap">
+        <div class="swatch" style="background:#C0392B"></div>
+        <div class="swatch-name">Error</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BUTTONS + LOGOS ══ -->
+  <div class="buttons-logos-section">
+
+    <!-- Buttons -->
+    <div>
+      <div class="section-label">Primary Button</div>
+      <div class="btn-group">
+        <div class="btn-col">
+          <div class="btn-state-label">Default</div>
+          <button class="btn-primary">Button</button>
+        </div>
+        <div class="btn-col">
+          <div class="btn-state-label">Hover</div>
+          <button class="btn-hover">Button</button>
+        </div>
+        <div class="btn-col">
+          <div class="btn-state-label">Navy CTA</div>
+          <button class="btn-navy">Button</button>
+        </div>
+        <div class="btn-col">
+          <div class="btn-state-label">Ghost</div>
+          <button class="btn-ghost">Button</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="guide-divider"></div>
+
+  <!-- ══ ICONS ══ -->
+  <div class="icons-section">
+    <div class="section-label">Icons</div>
+    <div class="icons-grid">
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 12L12 4l9 8" stroke="#00629B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-4h4v4h4a1 1 0 001-1v-9" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">Home</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="#00629B" stroke-width="2"/><path d="M12 7v10M7 12h10" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">Add Funds</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#00629B" stroke-width="2"/><path d="M3 10h18" stroke="#00629B" stroke-width="2"/><path d="M7 14h4" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">ID Card</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#00629B" stroke-width="2"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#00629B" stroke-width="2"/><path d="M9 12h6M9 16h4" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">History</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="#00629B" stroke-width="2"/><path d="M5 20c0-4 3.1-7 7-7s7 3 7 7" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">Profile</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="#00629B" stroke-width="2"/><path d="M12 8v4" stroke="#00629B" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16" r="1" fill="#00629B"/></svg>
+        </div>
+        <div class="icon-label">Report Lost</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#00629B" stroke-width="2"/><circle cx="12" cy="17" r="1.5" fill="#00629B"/><path d="M10 6h4" stroke="#00629B" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">Mobile ID</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#00629B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="icon-label">Wallet</div>
+      </div>
+
+      <div class="icon-item">
+        <div class="icon-box">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke="#00629B" stroke-width="2"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="icon-label">Settings</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ COMPONENTS ══ -->
+  <div class="components-section">
+    <div class="section-label">Components</div>
+    <div class="components-row">
+
+      <!-- Balance chip -->
+      <div class="comp-balance-chip">
+        <div class="comp-bc-label">Dining $</div>
+        <div class="comp-bc-amount">$142.50</div>
+        <div class="comp-bc-name">Meal Plan</div>
+      </div>
+
+      <!-- ID card -->
+      <div class="comp-id-card">
+        <div class="comp-id-avatar">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#FFCD00"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#FFCD00" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="comp-id-info">
+          <div class="comp-id-name">Alex Johnson</div>
+          <div class="comp-id-num">ID #2025-88341</div>
+        </div>
+        <div class="comp-id-badge">ACTIVE</div>
+      </div>
+
+      <!-- Transaction row -->
+      <div class="comp-txn">
+        <div class="comp-txn-icon">🍕</div>
+        <div>
+          <div class="comp-txn-name">64 Degrees</div>
+          <div class="comp-txn-sub">Today · Dining $</div>
+        </div>
+        <div class="comp-txn-amount">-$8.75</div>
+      </div>
+
+      <!-- Transaction credit -->
+      <div class="comp-txn">
+        <div class="comp-txn-icon" style="background:#E8F7EE">💳</div>
+        <div>
+          <div class="comp-txn-name">Account Deposit</div>
+          <div class="comp-txn-sub">Yesterday · Dining $</div>
+        </div>
+        <div class="comp-txn-amount cr">+$50.00</div>
+      </div>
+
+      <!-- Input fields -->
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <input class="comp-input" placeholder="Enter amount" readonly>
+        <div class="comp-input-focused">$25.00</div>
+      </div>
+
+      <!-- Tab bar -->
+      <div class="comp-tab-bar">
+        <div class="comp-tab active">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M3 12L12 4l9 8" stroke="#00629B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 001 1h4v-4h4v4h4a1 1 0 001-1v-9" stroke="#00629B" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="comp-tab-label" style="color:#00629B">Home</div>
+          <div class="comp-tab-dot"></div>
+        </div>
+        <div class="comp-tab">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#B6B1A9" stroke-width="2"/><path d="M3 10h18" stroke="#B6B1A9" stroke-width="2"/></svg>
+          <div class="comp-tab-label">Accounts</div>
+        </div>
+        <div class="comp-tab">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#B6B1A9" stroke-width="2"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#B6B1A9" stroke-width="2"/></svg>
+          <div class="comp-tab-label">History</div>
+        </div>
+        <div class="comp-tab">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="#B6B1A9" stroke-width="2"/><path d="M5 20c0-4 3.1-7 7-7s7 3 7 7" stroke="#B6B1A9" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="comp-tab-label">Profile</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
