@@ -7,7 +7,7 @@ $(document).ready(function(){
     "I speak English, Spanish, and Japanese.", 
     "I snorkeled in Molokini Crater alongside barracudas and sea turtles.",
     "I'm addicted to Sudoku. I'm even programming my own puzzle generator in C.", 
-    "I was a Power Ranger for Halloween 4 years straight. One year I switched it up and went as Godzilla.", 
+    "I was a Power Ranger for Halloween 4 years straight.", 
     "My dream destinations: New Zealand, Hong Kong, France, and the Isle of Man ✈️", 
     "I am an avid dogwatcher and can identify over 50 breeds 🐕", 
     "My passion for design comes from my family's legacy: I'm a fourth generation piñata maker 🪅",
