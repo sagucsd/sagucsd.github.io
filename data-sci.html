@@ -124,7 +124,7 @@
             <div class="row">
               <div  class="subgroup-left-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
                   <h4 id="dataset">The Dataset</h4>
-                  <p>The dataset is from an experiment (Izzah et al., 2022) exploring machine learning models to identify whether subjects performed cognitive tasks or not. Heart Rate Variability (HRV) is the variation in the time between two heartbeats. 30 subjects completed two cognitive tests (d2 Attention Test and Switcher Featuring Task) during which their HRV was monitored as a physiological indicator of mental workload. <span class="highlight highlight-data">This analysis uses unpublished NASA Task Load Index (TLX) scores, a self-reported measure of perceived mental workload.</span> Higher scores reflect higher engagement of mental workload in each task.</p>
+                  <p>The dataset is from an experiment (Izzah et al., 2022) exploring machine learning models. 30 subjects completed two cognitive tests (d2 Attention Test and Switcher Featuring Task) during which their Heart Rate Variability (HRV) was monitored as a physiological indicator of mental workload. <span class="highlight highlight-data">This analysis uses unpublished NASA Task Load Index (TLX) scores, a self-reported measure of perceived mental workload.</span> Higher scores reflect higher engagement of mental workload in each task.</p>
               </div>
               <div class="subgroup-right-side col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
 		<h4>Role</h4> 
@@ -209,7 +209,11 @@ hr_nasa
 
 # Retain first 20 subjects for visualization clarity
 data_clean <- data_csv %>% 
-  filter(Subject <= 20)
+  filter(Subject <= 20) 
+
+# Compute rmcorr between Heart Rate and NASA-TLX 
+hr_nasa<-rmcorr(participant=participant, measure1=hr, measure2=nasa, dataset=data_csv)
+hr_nasa 
 
 # Visualizing plot between HR and NASA-TLX 
 ggplot(data_clean, aes(x = hr, y = nasa,   group = factor(participant), color = factor(participant))) +
