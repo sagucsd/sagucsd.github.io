@@ -60,7 +60,7 @@
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-nav">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsible-nav" aria-label="Open navigation menu" aria-expanded="false" aria-controls="collapsible-nav">
           <span class="sr-only"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -93,8 +93,8 @@
                 <a href="#research">Research</a>
                 <ul class="nav nav-stacked"> 
 		  <li><a href="#interviews">User Interviews</a></li> 
-                  <li><a href="#user-flow">Problematic User Flow</a></li>
-                  <li><a href="#heuristics">Heuristic Evaluation</a></li>
+                  <li><a href="#user-flow">Problematic User Flow</a></li> 
+		  <li><a href="#before-after">Design Decisions</a></li>
                 </ul>
               </li>
 
@@ -164,32 +164,39 @@
 			<ul>
   				<li><strong>Abandoned Functionality:</strong> <span class="highlight highlight-mobile-cards">50% of users only used the app to check their dining balance.</span> The app's other features were effectively invisible.</li>
   				<li><strong>Deposit Friction:</strong> Making a deposit required navigating through 7 separate pages.</li>
-  				<li><strong>Poor Usability Score:</strong> <span class="highlight highlight-mobile-cards">The SUS score of the current design was 37/100 — considered poor usability.</span></li>
+  				<li><strong>Poor Usability Score:</strong> <span class="highlight highlight-mobile-cards">The SUS score of the current design was 37/100, considered poor usability.</span></li>
 			</ul>
 			<p>Users also consistently asked for easier access to recent transactions. <a href="https://docs.google.com/spreadsheets/d/1QeYzF_3_9k8sbGKZSDTOHZTZT-B9Pkt6kDih9-qTk-I/edit?usp=sharing">View the complete interview data here.</a></p>  
               <div id="user-flow" class="subgroup">
-                <h4>Problematic User Flow</h4> 
-		<img class="img-responsive full-img" src="images/mobile-cards-screens.png" alt="before screenshots"><br>  
-		<p class="img-caption">A few screenshots of the deposit process.</p>
-                  <p><span class="highlight highlight-mobile-cards">Adding funds to an account requires users to move between 7 pages.</span> Below is diagram illustrating this process.</p> 
+                <h4>Problematic User Flow</h4>   
+		<img class="img-responsive full-img" src="images/mobile-cards-screens.png" alt="before screenshots">  
+		<p class="img-caption">A few screenshots of the deposit process.</p><br> 
+		<p>The current deposit flow is unnecessarily long. <span class="highlight highlight-mobile-cards">Adding funds to an account requires users to move between 7 pages.</span></p>
 	<img class="img-responsive full-img" src="images/user-flow-issues-2.png" alt="user flow"> 
-              </div>
-              <div id="heuristics" class="subgroup">
-                <h4>Heuristic Evaluation</h4>  
-              	<p>The current app fails many of Nielsen's 10 usability heuristics. <span class="highlight highlight-mobile-cards">When an app follows established standards, users know what to expect, learnability is increased, and confusion is reduced.</span> Below are some of the issues I identified.</p> 
-			<h5 class="mobile-cards-h5">1. Visibility of System Status</h5> 
-			<p>Users should always be aware of what they are doing in an app, especially one that involves financial transactions.</p> 
-				<img class="img-responsive full-img" src="images/heuristic-1-screens.png" alt="visibility of system status screens"><br>	
-			<h5 class="mobile-cards-h5">2. Consistency and Standards</h5> 
-			<p>Applications should be internally consistent, like using the same buttons and colors, so users know what to expect.</p> 
-				<img class="img-responsive full-img" src="images/heuristic-2-screens.png" alt="consistency and standards screens"><br> 
-			<h5 class="mobile-cards-h5">3. Flexibility and Efficiency of Use</h5> 
-			<p>Provide users with shortcuts to speed up tasks.</p>
-				<img class="img-responsive full-img" src="images/heuristic-3-screens.png" alt="flexibility and efficient use screens"><br>  
-			<h5 class="mobile-cards-h5">4. Accessible Colors</h5> 
-			<p>Accessibility guidelines require text and its background to have a color contrast of at least 4.5:1 in order to be readable.</p> 
-				<img class="img-responsive full-img" src="images/heuristic-4-screens.png" alt="accessibile colors screens"><br> 
-	      </div> 
+              </div> 
+		<div id="before-after" class="subgroup">
+  			<h4>Design Decisions: Before &amp; After</h4>
+  			<p>The existing app fails many of Nielsen's 10 usability heuristics. <span class="highlight highlight-mobile-cards">When an application follows established standards, users know what to expect, learnability is increased, and confusion is reduced.</span> Every design decision traces back to a heuristic violation or interview finding. Below are the most critical screens.</p>
+  			<h5 class="mobile-cards-h5">Login Screen</h5>
+  				<img class="img-responsive full-img" style="max-width: 60%; margin: 0 auto; display: block;" src="images/login-before-after.png" alt="Login screen before and after redesign: original has unlabeled input fields and low contrast; redesign has labeled fields, WCAG-compliant colors, and a clear Sign In button"><br>
+  				<ul>
+    					<li><strong>Consistency and Standards:</strong> "Login" was just a plain text link. The redesign uses a design system to maintain the same typography, color palette, and components.</li>
+    					<li><strong>Accessible Colors:</strong> "Remember Me" and "Locations" were invisible against the blue background. All text in the new design meets WCAG 4.5:1 contrast requirements.</li>
+  				</ul>
+  				<h5 class="mobile-cards-h5">Home Screen</h5>
+  					<img class="img-responsive full-img" style="max-width: 60%; margin: 0 auto; display: block;" src="images/home-before-after.png" alt="Home screen before and after redesign: original shows one balance; redesign shows all three balances on one screen with a persistent bottom navigation"><br>
+  					<ul>
+    						<li><strong>Visibility of System Status:</strong> Only one balance was visible at a time, making users to jump around via the "back" button to see the others. The redesign displays all 3 balances the moment you log in.</li>
+    						<li><strong>Flexibility and Efficiency of Use:</strong> Checking a different balance required tapping "Check Balances", navigating away, then hitting back—repeat for each account. Recent Activity brings transaction history to the home screen, eliminating the need to hunt for it.</li>
+   						 <li><strong>Consistency and Standards:</strong> The original's navigation is a 2×2 grid of giant blue squares. <span class="highlight highlight-mobile-cards">Quick Actions replace them with differentiated icons and a persistent bottom navigation replaces back-button dependency.</span></li>
+  					</ul>
+ 					<h5 class="mobile-cards-h5">Deposit Screen</h5>
+  						<img class="img-responsive full-img" style="max-width: 60%; margin: 0 auto; display: block;" src="images/deposit-before-after-2.png" alt="Deposit screen before and after redesign: original requires 4 screens and a billing address form; redesign consolidates everything onto one screen"><br>
+ 						<ul>
+    							<li><strong>Flexibility and Efficiency of Use:</strong> Making a deposit required 7 separate screens. The redesign consolidates everything (account selector, amount, custom input, and saved payment method) onto one screen. A floating action button (FAB) makes the most-used action available without navigating away.</li>
+    							<li><strong>Recognition Rather Than Recall:</strong> The original required a full billing address form on every deposit. The redesign saves payment methods so returning users never re-enter their details.</li>
+  						</ul>
+					</div>
             </section>
             <div class="section-divider">
               <div class="dot1">
@@ -229,7 +236,7 @@
               	<hr>
               	<div id="ab-testing" class="subgroup">
                 <h4>A/B Testing</h4>
-                <p><span class="highlight highlight-mobile-cards">A/B testing will empirically prove which design users prefer. I ran 20 A/B tests measuring user preference for making deposits.</span> A is the current system (control) and B is my revamped design (variant). Users who saw the control had a conversion rate of 10%, and the other users who saw the variant had a 35% conversion rate. <span class="highlight highlight-photos">With a 95% statistical significance and p-value of 0.02, I can be confident that variant B is the preferred design. The SUS score for my design was 80/100.</span></p> 
+                <p>I ran 20 A/B tests measuring user preference for making deposits. A is the current system (control) and B is my revamped design (variant). Users who saw the control had a conversion rate of 10%, and the other users who saw the variant had a 35% conversion rate. <span class="highlight highlight-photos">With a 95% statistical significance and p-value of 0.02, I can be confident that variant B is the preferred design. The SUS score for my design was 80/100.</span></p> 
               </section> 
 
             <div class="section-divider">
@@ -241,7 +248,7 @@
               <h3>Final Prototype</h3>
               <hr> 
             <div class="subgroup"> 
-	     <div style="position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden;">
+	     <div style="position: relative; padding-bottom: 120%; height: 0; overflow: hidden;">
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid rgb(201, 201, 201);" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F7RWCLirZhxCpBiF87dIHAY%2FTriton-Cash%3Fpage-id%3D0%253A1%26node-id%3D2-2%26starting-point-node-id%3D2%253A2%26hide-ui=1" allowfullscreen></iframe>
 </div>
             </div>
@@ -258,7 +265,7 @@
               <hr> 
             <div class="subgroup"> 
 		<img class="img-responsive full-screen-img" src="images/mobile-cards-quote.png" alt="quote"><br>
-	      <p>Design decisions need to be evidence-based and validated through user testing—skipping that step is how a 1-star app gets built and stays that way. A 37 SUS score isn't an accident, it's what happens when no one asks users what matters most. The most valuable lesson was learning to let the data speak. Whether or not an organization acts on your recommendations is outside your control.</p>
+	      <p>Design decisions need to be evidence-based and validated through user testing—skipping that step is how a 1-star app gets built and stays that way. A 37 SUS score isn't an accident, it's a data point. It's what happens when no one asks users what matters most. The most valuable lesson was learning to let the data speak. Whether or not an organization acts on your recommendations is outside your control.</p>
             </div>
 	   </section>
         </div>
@@ -284,7 +291,7 @@
         </div>
         <div class="footer-icons col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <p>
-            <a href="mailto:sag009@ucsd.edu" target="_blank"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
+            <a href="mailto:sag009@ucsd.edu" aria-label="Send me an email"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a>
           </p>
           <br>
           <p class="footer-text-small">&#169; 2025 Sarai Gonzalez</p>
