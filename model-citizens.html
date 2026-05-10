@@ -262,16 +262,17 @@
               <li>
                 <a href="#what-built">What We Built</a>
               </li>
-
               <li>
                 <a href="#who-helps">Who It Helps</a>
               </li> 
-
 	      <li>
                 <a href="#architecture">Architecture</a>
 		<ul class="nav nav-stacked">
                   <li><a href="#data-source">Data Sources & Integrity</a></li>
                 </ul>
+              </li> 
+	      <li>
+                <a href="#future-steps">What I'd Do Next</a>
               </li> 
               <li> 
                 <a href="#what-i-learned">Lessons Learned</a>
@@ -281,7 +282,6 @@
         </nav>
         <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 col-centered main-content">
           <section id="overview" class="group first-section" data-aos="fade-up" data-aos-duration="600"> 
-	
             <h3>Overview</h3> 
 	    <hr> 
 	<div class="row">
@@ -304,6 +304,7 @@
                 <p>8 hours</p> 
                 <h4>Links</h4>
                 <p><a href="https://musical-buttercream-df352e.netlify.app/">View Live Demo</a></p>
+		<p><a href="https://github.com/CalvinFronda/claude-sd-hackaton">View GitHub Repo</a></p>
                 <h4>Tools</h4>
                 <p>Claude AI, Netlify</p>
 		<br>
@@ -324,8 +325,8 @@
               <h3>What We Built</h3>
               <hr> 
 	      <div class="subgroup">
-                <h5 class="citizens-h5">One page. Every voice. All the patterns.</h5> 
-                  <p>Our dashboard ingests three months of San Diego City Council meeting minutes—every public comment between December 2025 and March 2026—strips out the bureaucratic language, finds the patterns, and makes them visible. The result: a single page that turns months of civic participation into one clear, ranked answer — <strong>what are San Diego residents most passionate about right now?</strong></p> 
+                <h5 class="citizens-h5">Replace the 5-step Research Odyssey with a Single Query</h5> 
+                  <p>Our dashboard ingests three months of San Diego City Council meeting minutes—every public comment between December 2025 and March 2026—strips out the bureaucratic language, finds the patterns, and makes them visible. The result: a single page that turns months of civic participation into one clear, ranked answer: <strong>what are San Diego residents most passionate about right now?</strong></p> 
 		<div class="demo-block">
     <div class="browser-frame demo-browser">
       <div class="browser-chrome">
@@ -337,7 +338,7 @@
         <div class="browser-url">musical-buttercream-df352e.netlify.app</div>
       </div>
       <div class="browser-body">
-        <img src="images/model-citizens-demo.gif" alt="Model Citizens dashboard demo — searching for top voter issues" />
+        <img src="images/model-citizens-demo.gif" alt="Model Citizens dashboard demo — searching for top issues" />
       </div>
     </div>
     <p class="img-caption">Clicking "What's the top issue?" provides a summary from months of meeting data.</p>
@@ -386,8 +387,7 @@
     				<div class="user-card"><p class="user-role">Advocates & Nonprofits</p><p class="user-need">I want to know if climate is trending up or down on the agenda so I can decide where to focus our next campaign.</p></div>
   			</div>
               </div>
-             
-         
+                
             </section>
           
 
@@ -402,14 +402,14 @@
               	<hr>
               	<div class="subgroup">
                 <h5 class="citizens-h5">From Raw Minutes to Readable Insights</h5>
-                <p>Here's how raw government data became a civic intelligence tool. A weekly cron job scrapes agendas from San Diego's Hyland Cloud portal, stores them in a database, then sends them through Claude for theme grouping and sentiment analysis before surfacing results in the dashboard.</p>  
+                <p>Here's how raw government data became a civic intelligence tool in just 8 hours. A weekly cron job scrapes agendas from San Diego's Hyland Cloud portal, stores them in a database, then sends them through Claude for theme grouping and sentiment analysis before surfacing results in the dashboard.</p>  
 			<div class="arch-flow">
    				<!-- BOX 1: SOURCE -->
     				<div class="arch-box source">
       					<span class="arch-step-label">The Clunky Data</span>
       					<p class="arch-nickname">San Diego<br>Hyland Cloud</p>
       					<p class="arch-name">Source</p>
-      					<p class="arch-desc">Hundreds of meeting pages, agendas, PDFs, bureaucratic language — trapped in a legacy portal.</p>
+      					<p class="arch-desc">Hundreds of meeting pages, agendas, PDFs, bureaucratic language trapped in a legacy portal.</p>
     				</div>
     				<!-- CONNECTOR -->
     				<div class="arch-connector">
@@ -455,7 +455,7 @@
   			<div class="systems-callout">
     				<div class="callout-icon">🧠</div>
     				<div class="callout-text">
-      					<h4>Design Decision: Keep Humans in the Loop</h4>
+      					<h4>Design Decision: Keep humans in the loop</h4>
       					<p>Every AI output surfaces its source. The design choice was intentional: AI should boost trust in the data. Residents can always trace a theme back to the person who said it.</p>
     				</div>
   			</div>
@@ -468,20 +468,37 @@
               </section> 
 
  	   
-
 	   <div class="section-divider">
               <div class="dot1"></div>
               <div class="dot2"></div>
               <div class="dot3"></div>
            </div>  
-
+	<section id="future-steps" class="group" data-aos="fade-up" data-aos-duration="600">
+              <h3>What I'd Do Next</h3>
+              <hr> 
+            <div class="subgroup">
+	    <h5 class="citizens-h5">From Data Delivery to Civic Involvement</h5>
+	      <p>8 hours was just the beginning. Here's what I would do next:</p> 
+	      	<ul>
+			<li><strong>IAP2 Spectrum of Public Participation:</strong> Use this framework as a design north star. Model Citizens currently sits at <em>Inform</em>. Future iterations would move residents up the spectrum toward <em>Involve</em> and eventually <em>Collaborate</em>, turning passive data consumers into active civic participants.</li>
+			<li><strong>Longitudinal Trends:</strong> Trend views over time, not just a current snapshot, allowing residents to see if the city is actually keeping its multi-year promises on housing and climate.</li>
+			<li><strong>Mobile Design:</strong> Mobile-first design for residents who attend council meetings and need quick context on their phone.</li> 
+			<li><strong>Onboarding Flow:</strong> Lower the barrier for first-time users unfamiliar with how council meetings work.</li>
+		</ul>		
+            </div>
+	   </section>
+	 <div class="section-divider">
+              <div class="dot1"></div>
+              <div class="dot2"></div>
+              <div class="dot3"></div>
+           </div>
             <section id="what-i-learned" class="group">
               <h3>Lessons Learned</h3>
               <hr> 
             <div class="subgroup"> 
 	      <h5 class="citizens-h5">Designing for AI: Trust is a UI Requirement</h5>
 	      <p>This was a first-of-its-kind event pairing the Claude developer community with real-life civic challenges. Working directly with the Claude API taught me that designing for AI is different from traditional UI. In order for a resident to trust an AI-generated summary of a city council vote, they need a receipt. In the age of AI, the designer’s primary job is to build the trust chain between the algorithm and the end user.</p>
-<h5 class="citizens-h5">UX as a Bridge, Not Decoration</h5>
+<h5 class="citizens-h5">UX as a Bridge, not Decoration</h5>
 <p>Civic UX means slashing beaurocratic jargon like meeting codes and legal terms to create an interface a resident could scan in 60 seconds. Defining users before touching the interface made every design decision faster and more defensible. Tight constraints reveal what actually matters. Building a dashboard a skeptical resident would actually believe took deliberate design decisions at every layer.</p> 
             </div>
 	   </section>
