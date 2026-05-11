@@ -18,6 +18,7 @@
     --highlight-about: #9EEBCF60; 
     --highlight-mobile-cards: #92AEEF40; 
     --highlight-career-fair: #68AACC40;
+    --highlight-model-citizens: #995C8F40;
 
     --citizens-color:#995C8F;
     --yellow-color:#F9CB42;
@@ -590,6 +591,12 @@ hr {
 }
 .highlight-career-fair.shown {
   background-image: linear-gradient(to right, transparent 50%, var(--highlight-career-fair) 50%);
+} 
+.highlight-model-citizens {
+  background-image: linear-gradient(to right, transparent 50%, var(--highlight-model-citizens) 50%);
+}
+.highlight-model-citizens.shown {
+  background-image: linear-gradient(to right, transparent 50%, var(--highlight-model-citizens) 50%);
 }
 .highlight-link {
   position: relative;
