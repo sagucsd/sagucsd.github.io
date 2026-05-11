@@ -37,7 +37,7 @@
 /* ARCH FLOW */
   .arch-flow {
     display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    grid-template-columns: 1fr 60px 1fr 60px 1fr 60px 1fr;
     align-items: center;
     gap: 0;
     margin-bottom: 16px;
@@ -45,7 +45,7 @@
 
   .arch-box {
     border-radius: 14px;
-    padding: 16px;
+    padding: 12px;
     border: 0.5px solid var(--border);
     position: relative; 
     min-height: unset;
@@ -56,7 +56,7 @@
   .arch-box.output { background: var(--accent2-light); border-color: #9FE1CB; }
 
   .arch-step-label {
-    font-size: 9px;
+    font-size: 9px !important;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -71,21 +71,20 @@
   .output .arch-step-label { background: #9FE1CB; color: var(--accent2); }
 
   .arch-nickname {
-    font-family: var(--serif);
-    font-size: 16px;
+    font-size: 14px !important;
     font-weight: 400;
     color: var(--ink);
     line-height: 1.2;
     margin-bottom: 4px;
   }
   .arch-name {
-    font-size: 11px;
+    font-size: 12px !important;
     font-weight: 500;
     color: var(--ink);
     margin-bottom: 4px;
   }
   .arch-desc {
-    font-size: 11px;
+    font-size: 14px !important;
     color: var(--ink2);
     line-height: 1.4;
   }
@@ -97,13 +96,14 @@
     gap: 4px;
     padding: 0 8px;
   }
+  
   .arch-connector-arrow {
-    font-size: 14px;
+    font-size: 20px;
     color: var(--ink3);
     line-height: 1;
   }
   .arch-connector-label {
-    font-size: 9px;
+    font-size: 10px !important;
     color: var(--ink3);
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -279,7 +279,7 @@
 	<div class="row">
             <div class="subgroup"> 
 		<h5 class="citizens-h5">45 minutes to find a public record. 30 seconds after Model Citizens. Every voice heard.</h5>
-		<p>San Diego publishes open city data, but most of it sits in formats that require technical skills to navigate. It's information residents need to see how their city is working for them. In March 2026, I joined 60 builders at the inaugural Claude Impact Lab to change that. In 8 hours, we built a civic intelligence dashboard that transforms months of bureaucratic records into plain-English themes, sentiment-coded visualizations, and an AI chat interface any resident can use.</p> 
+		<p>San Diego publishes open city data, but most of it sits in formats that require technical skills to navigate. It's information residents need to see how their city is working for them. In March 2026, I joined 60 builders at the inaugural Claude Impact Lab to change that. <span class="highlight highlight-model-citizens"> In 8 hours, we built a civic intelligence dashboard that transforms months of bureaucratic records into plain-English themes, sentiment-coded visualizations, and an AI chat interface any resident can use.</span></p> 
 	<div class="subgroup">
             <h4 id="problem">The Problem</h4>
               <p>Every week, hundreds of San Diego residents speak at City Council. Voters show up but their voices get lost in the archives. Their words get filed away into meeting minutes — technically public, practically buried. Answering something as simple as "Is housing discussed more or less than last year?" requires a five-step research odyssey.</p> 
@@ -287,7 +287,7 @@
             <div class="row">
               <div  class="subgroup-left-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
                   <h4 id="solution">The Solution</h4>
-                  <p>Model Citizens ingests three months of City Council meeting minutes, strips the bureaucratic language, and makes them searchable by anyone — no research degree required. The impact: time-to-insight for public spending and housing trends dropped from 45 minutes to 30 seconds.</p>
+                  <p>Model Citizens ingests three months of City Council meeting minutes, strips the bureaucratic language, and makes them searchable by anyone — no research degree required. <span class="highlight highlight-model-citizens">The impact: time-to-insight dropped from 45 minutes to 30 seconds for topics like public spending and housing.</span></p>
               </div>
               <div class="subgroup-right-side col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
 		<h4>Role</h4> 
@@ -372,7 +372,7 @@
               <hr> 
 	      <div class="subgroup">
               	<h5 class="citizens-h5">Designed for Every Kind of Civic Participant</h5> 
-                 	<p>Public information shouldn't require a research degree or technical skills. I mapped 3 user types during the sprint, each with a different information need but the same core frustration: civic data is designed for bureaucrats. The mission was to give everyone the equal voice they deserve in our democracy by making civic engagement accessible and understandable.</p>
+                 	<p>Public information shouldn't require a research degree or technical skills. <span class="highlight highlight-model-citizens">I mapped 3 user types during the sprint, each with a different information need but the same core frustration: civic data is designed for bureaucrats.</span> The mission was to give everyone the equal voice they deserve in our democracy by making civic engagement accessible and understandable.</p>
 			<div class="users-grid">
     				<div class="user-card"><p class="user-role" style="color:#555555;">Residents</p><p class="user-need">"I want to see what my council actually spent time on this month so I can show up to the next meeting informed."</p></div>
     				<div class="user-card"><p class="user-role" style="color:#555555;">Journalists</p><p class="user-need">"I want to track shifting housing votes at a glance so I can file before the news cycle moves on."</p></div>
@@ -409,9 +409,9 @@
     				</div>
     				<!-- BOX 2: PROCESS -->
     				<div class="arch-box process">
-     					<p class="arch-nickname">Weekly<br>Scraper</p>
+     					<p class="arch-nickname">Weekly Scraper</p>
       					<p class="arch-name">Cron Job + Database</p>
-      					<p class="arch-desc">A scheduled job pulls current meeting minutes into structured data.</p>
+      					<p class="arch-desc">A scheduled job pulls fresh meeting minutes into structured data.</p>
     				</div>
     				<!-- CONNECTOR -->
     				<div class="arch-connector">
@@ -420,7 +420,7 @@
     				</div>
     				<!-- BOX 3: AI -->
     				<div class="arch-box ai">
-      					<p class="arch-nickname">Claude 3.5<br>Sonnet</p>
+      					<p class="arch-nickname">Claude 3.5 Sonnet</p>
       					<p class="arch-name">NLP + Sentiment Analysis</p>
       					<p class="arch-desc">Groups comments into themes, reads sentiment, and powers the natural language chat interface.</p>
     				</div>
@@ -431,7 +431,7 @@
     				</div>
 				<!-- BOX 4: OUTPUT -->
     				<div class="arch-box output">
-      					<p class="arch-nickname">The<br>Dashboard</p>
+      					<p class="arch-nickname">The Dashboard</p>
       					<p class="arch-name">Frontend + Chat UI</p>
       					<p class="arch-desc">Theme rankings, sentiment tags, real quotes, and a chat assistant — one page any resident can understand.</p>
     				</div>
@@ -497,9 +497,9 @@
               <hr> 
             <div class="subgroup"> 
 	      <h5 class="citizens-h5">Designing for AI: Trust is a UI Requirement</h5>
-	      <p>This was a first-of-its-kind event pairing the Claude developer community with real-life civic challenges. Working directly with the Claude API taught me that designing for AI is different from traditional UI. In order for a resident to trust an AI-generated summary of a city council vote, they need a receipt. In the age of AI, the designer’s primary job is to build the trust chain between the algorithm and the end user.</p>
+	      <p>This was a first-of-its-kind event pairing the Claude developer community with real-life civic challenges. Working with the Claude API taught me that designing for AI is different from traditional UI. In order for a resident to trust an AI-generated summary of a city council vote, they need a receipt. <span class="highlight highlight-model-citizens">In the age of AI, the designer’s primary job is to build the trust chain between the algorithm and the end user.</span></p>
 <h5 class="citizens-h5">UX as a Bridge, not Decoration</h5>
-<p>Working alongside engineers under tight constraints taught me how to communicate design decisions quickly and pivot when technical feasibility shifted the scope. To cut through the noise, I defined users before touching the interface, making every design decision immediately defensible. Civic UX means slashing bureaucratic jargon like meeting codes and legal terms to create an interface any resident can scan in 60 seconds. Unlike the private sector, civic tech can't afford to lose clarity or erode trust. Building a dashboard a skeptical resident would actually trust took deliberate design decisions at every layer. A disengaged resident is one less voice heard.</p> 
+<p>Working alongside engineers under tight constraints taught me how to communicate design decisions quickly and pivot when technical feasibility shifted the scope. To cut through the noise, I defined users before touching the interface, making every design decision immediately defensible. Civic UX means slashing bureaucratic jargon like meeting codes and legal terms to create an interface any resident can scan in 60 seconds. <span class="highlight highlight-model-citizens">Unlike the private sectore, civic tech can't afford to lose clarity or erode trust.</span> Building a dashboard a skeptical resident would trust took deliberate design decisions at every layer. A disengaged resident is one less voice heard.</p> 
             </div>
 	   </section>
         </div>
