@@ -250,9 +250,14 @@
                   <li><a href="#solution">The Solution</a></li>
                 </ul>
               </li>
-
+	      <li>
+                <a href="#research">Research & Discovery</a>
+		<ul class="nav nav-stacked">
+                  <li><a href="#stakeholder">Stakeholder Interview</a></li>
+                </ul> 
+              </li>
               <li>
-                <a href="#what-built">What We Built</a>
+                <a href="#what-built">What We Built</a> 
               </li>
               <li>
                 <a href="#who-helps">Who It Helps</a>
@@ -281,7 +286,7 @@
 		<h5 class="citizens-h5">45 minutes to find a public record. 30 seconds after Model Citizens. Every voice heard.</h5>
 		<p>San Diego publishes open city data, but most of it sits in formats that require technical skills to navigate. It's information residents need to see how their city is working for them. In March 2026, I joined 60 builders at the inaugural Claude Impact Lab to change that. <span class="highlight highlight-model-citizens"> In 8 hours, we built a civic intelligence dashboard that transforms months of bureaucratic records into plain-English themes, sentiment-coded visualizations, and an AI chat interface any resident can use.</span></p> 
 	<div class="subgroup">
-            <h4 id="problem">The Problem</h4>
+            <h4 id="problem">The Problem</h4> 
               <p>Every week, hundreds of San Diego residents speak at City Council. Voters show up but their voices get lost in the archives. Their words get filed away into meeting minutes — technically public, practically buried. A simple question like "Is housing discussed more or less than last year?" requires a five-step research odyssey.</p> 
 	</div>
             <div class="row">
@@ -312,13 +317,56 @@
             <div class="dot3">
             </div>
           </div>
+	<section id="research" class="group" data-aos="fade-up" data-aos-duration="600">
+              <h3>Research & Discovery</h3>
+              <hr> 
+	      <div class="subgroup">
+              	<h5 class="citizens-h5">Replace the 5-step Research Odyssey with a Single Query</h5> 
+                 	<p>Without a centralized way to spot trends, residents are left navigating a portal where every meeting lives on its own page. No search, filtering, or way to compare across dates. If they want to understand the city's priorities, the only alternative is building a spreadsheet from scratch.</p>
+				<div class="browser-frame">
+      					<div class="browser-chrome">
+        					<div class="browser-dots">
+          						<div class="browser-dot dot-red"></div>
+          						<div class="browser-dot dot-yellow"></div>
+          						<div class="browser-dot dot-green"></div>
+        				</div>
+        			<div class="browser-url">sandiego.hylandcloud.com/211agendaonlinecouncil</div>
+      				</div>
+      				<div class="browser-body">
+        				<img src="images/sd-hyland-small.png" alt="San Diego Hyland Cloud Portal — current experience" />
+      				</div>
+    				</div>
+					<br>
+              </div>
+                <div id="stakeholder" class="subgroup">
+                <h4>Stakeholder Interview</h4>
+  			<p>The event was organized by the City of San Diego's Chief Data Officer, which meant we had direct access to people who think about civic data access every day. A stakeholder interview early in the sprint shaped everything that followed.</p> 
+			<p style="font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #555555; margin: 24px 0 12px 0;">Who currently uses open data systems?</p>
+		<div class="users-grid">
+    				<div class="user-card"><p class="user-role" style="color:#555555;">🧑‍💻 Civic Technologists</p><p class="user-need">Private sector professionals who can easily navigate open data portals due to their technical training.</p></div>
+    				<div class="user-card"><p class="user-role" style="color:#555555;">🏛️ City Employees</p><p class="user-need">Range from analyst to department head — comfortable with charts and graphs, some able to perform their own analysis.</p></div>
+    				<div class="user-card"><p class="user-role" style="color:#555555;">🫶 Nonprofit Employees</p><p class="user-need">Use data to understand service efficacy or conduct demographic analyses to understand client needs.</p></div>
+  			</div>
+			<br>
+    <p><span class="highlight highlight-model-citizens">None of these 3 groups includes everyday San Diegans.</span></p> 
+	<h4 class="quote" style="margin-top: 24px;">How might we transform a system that buries civic data into one that empowers residents to use it?</h4>
+	</div> 
+	
+      </section>
+	<div class="section-divider">
+            <div class="dot1">
+            </div>
+            <div class="dot2">
+            </div>
+            <div class="dot3">
+            </div>
+          </div>
 
           <section id="what-built" class="group" data-aos="fade-up" data-aos-duration="600">
               <h3>What We Built</h3>
               <hr> 
 	      <div class="subgroup">
-                <h5 class="citizens-h5">Replace the 5-step Research Odyssey with a Single Query</h5> 
-                  <p>Our dashboard ingests three months of San Diego City Council meeting minutes—between December 2025 and March 2026—strips out the bureaucratic language, finds the patterns, and makes them visible. The result: a single page that turns months of civic participation into one clear, ranked answer: <strong>what are San Diego residents most passionate about right now?</strong></p> 
+              	<p>Our dashboard ingests three months of San Diego City Council meeting minutes—between December 2025 and March 2026—strips out the bureaucratic language, finds the patterns, and makes them visible. The result is an active civic intelligence layer: a real-time monitor of shifting community priorities.</p> 
 		<div class="demo-block">
     <div class="browser-frame demo-browser">
       <div class="browser-chrome">
@@ -374,9 +422,9 @@
               	<h5 class="citizens-h5">Designed for Every Kind of Civic Participant</h5> 
                  	<p>Public information shouldn't require a research degree or technical skills. <span class="highlight highlight-model-citizens">I mapped 3 user types, each with a different information need but the same core frustration: civic data is designed for bureaucrats.</span> The mission was to give everyone the equal voice they deserve in our democracy by making civic engagement accessible and understandable.</p>
 			<div class="users-grid">
-    				<div class="user-card"><p class="user-role" style="color:#555555;">Residents</p><p class="user-need">"I want to see what my council actually spent time on this month so I can show up to the next meeting informed."</p></div>
-    				<div class="user-card"><p class="user-role" style="color:#555555;">Journalists</p><p class="user-need">"I want to track shifting housing votes at a glance so I can file before the news cycle moves on."</p></div>
-    				<div class="user-card"><p class="user-role" style="color:#555555;">Advocates & Nonprofits</p><p class="user-need">"I want to know if climate is trending up or down on the agenda so I can decide where to focus our next campaign."</p></div>
+    				<div class="user-card"><p class="user-role" style="color:#555555;">🏘️ Residents</p><p class="user-need">"I want to bypass bureaucratic jargon to see what my council actually spent time on, so I can show up to the next meeting informed."</p></div>
+    				<div class="user-card"><p class="user-role" style="color:#555555;">📰 Journalists</p><p class="user-need">"I want to automate the tracking of housing votes across months of meetings, so I can file a trend story before the news cycle moves on."</p></div>
+    				<div class="user-card"><p class="user-role" style="color:#555555;">🫶 Advocates & Nonprofits</p><p class="user-need">"I want a high-level view of agenda trends, like climate, so I can decide where to focus our next advocacy campaign."</p></div>
   			</div>
               </div>
                 
@@ -497,9 +545,11 @@
               <hr> 
             <div class="subgroup"> 
 	      <h5 class="citizens-h5">Designing for AI: Trust is a UI Requirement</h5>
-	      <p>Working with the Claude API taught me that designing for AI is different from traditional UI. In order for a resident to trust an AI-generated summary of a city council vote, they need a receipt. <span class="highlight highlight-model-citizens">In the age of AI, the designer’s primary job is to build the trust chain between the algorithm and the end user.</span></p>
-<h5 class="citizens-h5">UX as a Bridge, not Decoration</h5>
-<p>Working alongside engineers under tight constraints taught me how to communicate design decisions quickly and pivot when technical feasibility shifted the scope. To cut through the noise, I defined users before touching the interface, making every design decision immediately defensible. Civic UX means slashing bureaucratic jargon like meeting codes and legal terms to create an interface any resident can scan in 60 seconds. <span class="highlight highlight-model-citizens">Unlike the private sector, civic tech can't afford to lose clarity or erode trust.</span> Building a dashboard a skeptical resident would trust took deliberate design decisions at every layer. A disengaged resident is one less voice heard.</p> 
+	      <p>Working with the Claude API taught me that designing for AI is different from traditional UI. In order for a resident to trust an AI-generated summary of a city council vote, they need a receipt. <span class="highlight highlight-model-citizens">In the age of AI, the designer’s primary job is to build the trust chain between the algorithm and the end user.</span></p> 
+	     <h5 class="citizens-h5">Pressure as a Design Tool</h5> 
+	     <p>Working alongside engineers under tight constraints taught me how to communicate design decisions quickly and pivot when technical feasibility shifted the scope. To cut through the noise, I defined users before touching the interface—keeping the team aligned and proving that pressure is one of the most effective filters for focus a designer can have.</p>
+	     <h5 class="citizens-h5">Civic UX is Not Consumer UX</h5>
+	     <p>Civic UX means slashing bureaucratic jargon like meeting codes and legal terms to create an interface any resident can scan in 60 seconds. <span class="highlight highlight-model-citizens">Unlike the private sector, civic tech can't afford to lose clarity or erode trust.</span> Building a dashboard a skeptical resident would trust took deliberate design decisions at every layer. A disengaged resident is one less voice heard.</p> 
             </div>
 	   </section>
         </div>
